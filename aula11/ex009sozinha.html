@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador de nacionalidade</title>
+</head>
+<body>
+    <h1>Identificador</h1>
+    País <input type="text" name="txtpaís" id="txtpaís">
+    <input type ="button" value="Identificar" onclick="verficar()"
+    <p><div id="res">Resutaldo</div></body></html></p>
+   <script>
+    function verficar() {
+        var txtp = window.document.getElementById('txtpaís')
+        var p = (txtpaís.value)
+        var res = window.document.getElementById('res')
+        res.innerHTML = `Nascido em ${p}`
+        if (p == 'Brasil') {
+            res.innerHTML += '<p>Você é brasileiro</P>'
+
+        } else {
+            res.innerHTML += '<p>Você é estrangeiro</p>'
+        }
+        
+
+    }
+   </script>
+</body>
+</html>

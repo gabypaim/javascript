@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(247, 142, 142);
+            color: rgb(255, 255, 255);
+            font: normal 18pt arial;
+        }
+
+            
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos  DOM </h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div class="msg">clique em mim</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName("p")[1]
+        /* var d = window.document.getElementById('msg')
+         
+        document.write('está escrito assim: ' + p1.innerText)
+        corpo.style.background = 'lightblue'
+        p1.style.color = 'blue'
+        
+        document.write(p1.innerHTML) // vem com a formatação junto (negrito)
+        window.alert(p1.innerText) // alert fica formatado com essa
+       
+        d.style.background = 'pink'
+        d.innerText = 'estou aguardando' // forma simples
+        window.document.getElementById('msg').innerText = 'Olá!' // forma + longa
+        */
+       
+      var d = window.document.querySelector('div.msg') // div é representada com # e classe com .
+      d.style.background = 'blue'
+
+
+    </script>
+
+</body>
+</html>
