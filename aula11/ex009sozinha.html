@@ -7,16 +7,23 @@
 </head>
 <body>
     <h1>Identificador</h1>
+
     País <input type="text" name="txtpaís" id="txtpaís">
-    <input type ="button" value="Identificar" onclick="verficar()"
-    <p><div id="res">Resutaldo</div></body></html></p>
+    <input type ="button" value="Identificar" onclick="verficar()">
+    
+    <div id="res">Resutaldo</div>
+</body>
+</html>
+
    <script>
     function verficar() {
         var txtp = window.document.getElementById('txtpaís')
         var p = (txtpaís.value)
+        var pm = p.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase()
+
         var res = window.document.getElementById('res')
         res.innerHTML = `Nascido em ${p}`
-        if (p == 'Brasil') {
+        if (pm == 'BRASIL') {
             res.innerHTML += '<p>Você é brasileiro</P>'
 
         } else {

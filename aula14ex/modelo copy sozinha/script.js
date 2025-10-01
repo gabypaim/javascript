@@ -8,7 +8,7 @@ function contar() {
         window.alert('Verifique os dados novamente. O passo deve ser maior que zero!')
         res.innerHTML = ('impossivel contar')
     } else {
-        res.innerHTML = "Contando:<br>"
+        res.innerHTML = "Contando:"
         if ( Number(inicio.value) < Number(fim.value) ) {
             //contagem crescente
             for (var c = Number(inicio.value); c <= Number(fim.value); c += Number(passo.value)) {
