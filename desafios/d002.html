@@ -3,46 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boas vindas</title>
+    <title>Desafio mensagens</title>
     <style>
+        body {
+            background-color: rgb(243, 200, 245);
+            text-align: center;
+            padding: 20px;
+        }
+
         div {
-            background-color: rgb(177, 152, 201);
-            height: 70px;
+            display: inline-block;
+            background-color: rgb(213, 233, 195);
+            height: 150px;
             width: 200px;
             border-radius: 10px;
+            margin: auto;
+            margin-top: 10%;
+            margin-bottom: 50px;
+            
         }
-        p {
+        div > p {
             text-align: center;
-            padding-top: 25px;
+            padding-top: 45px;
+            color: #396d59;
+        }
+
+        a {
+            color: #774c7a;
         }
     </style>
 </head>
 <body>
-    <div onclick="clicar()"><p>Inicie o desafio</p></div>
-
+    <div id="1" onclick="clicar()"><p>Botão 1</p></div>
+    <div id="2" onclick="clicar()"><p>Botão 2</p></div>
+    <div id="3" onclick="clicar()"><p>Botão 3</p></div>
+    
+    <a href="d001.html"><p>Desafio anterior</p></a>
+    <a href="d003.html"><p>Proximo desafio</p></a>
+    
     <script>
-        function clicar() {
-            let nome = window.prompt('Qual seu nome?')
-            
-            if (!nome) {
-                window.alert(`Digite um nome`)
-            } else {
-                let idade = prompt(`Olá ${nome}! Quantos anos você tem?`)
-                
-                if (!idade)  {
-                window.alert(`Digite sua idade`)
-                    
-                } else if (isNaN(idade)) {
-                window.alert(`Número invalido`)  
 
-                } else {
+        function clicar(){
+            let id = event.currentTarget.id
+            if (id === '1' ) {
+                window.alert('Você cliclou no primeiro botão')
+            } else if (id === '2'){
+                window.alert('Você cliclou no segundo botão')
 
-                window.alert(`Acabei de conhecer ${nome}, que tem ${idade} anos de idade!`)
-                }
+            }else if (id === '3') {
+                window.alert('Você cliclou no segundo botão')
             }
-                
+            
         }
-        
+
+       
+
     </script>
 </body>
 </html>

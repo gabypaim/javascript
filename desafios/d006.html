@@ -8,7 +8,8 @@
         body {
            text-align: center;
            background-color: #d5b3f5;
-           color: #ffffff;   
+           color: #ffffff;
+           margin-top: 150px;
         }
         input {
             height: 100px;
@@ -36,11 +37,15 @@
 
     <div id="res"></div>
 
+    <a href="d005.html"><p>Desafio anterior</p></a>
+    
+
     <script> 
 
     function clicar() {
         document.body.style.background = '#d5b3f5'
         document.body.style.color = '#ffffff'
+        document.body.style.margin = '150px';
         res.innerHTML = '';
         res.style.display = "none";
 
@@ -70,9 +75,10 @@
 
         
         if (t < 20) {
-            document.body.style.background = '#D7F1FA'
-            res.style.color = 'black'
-            document.body.style.color = '#3AA2E7'
+            document.body.style.background = '#D7F1FA';
+            res.style.color = 'black';
+            document.body.style.color = '#3AA2E7';
+            document.body.style.margin = '10px';
 
             let img = document.createElement('img')
             img.src = "frio.jpg";
@@ -81,10 +87,11 @@
             res.appendChild(img);
 
         }else {
-            document.body.style.background = '#FAF2D7'
-            res.style.color = 'white'
-            document.body.style.color = '#E79C3A'
-            res.style.background = '#2c3546'
+            document.body.style.background = '#FAF2D7';
+            res.style.color = 'white';
+            document.body.style.color = '#E79C3A';
+            res.style.background = '#2c3546';
+            document.body.style.margin = '10px';
             let img = document.createElement('img')
             img.src = "calor.jpg";
             img.alt = "Régua";

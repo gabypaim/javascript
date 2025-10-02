@@ -5,22 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antes e Depois</title>
     <style>
+        body {
+            text-align: center;
+            background-color: rgb(201, 193, 250);
+            
+            
+        }
          div {
             background-color: rgb(143, 153, 238);
             height: 100px;
             width: 200px;
             border-radius: 10px;
+            margin: auto;
+            margin-top: 12%;
+            margin-bottom: 5%;
         }
-        p {
+        div > p {
             text-align: center;
             padding-top: 20px;
             color: rgb(28, 0, 128);
             font-size: 1.5em;
         }
+
+        a {
+            
+            font-size: 1em;
+        }
     </style>
 </head>
 <body>
     <div onclick="clicar()"><p>Antessesor e Sucessor</p></div>
+    <a href="d002.html"><p>Desafio anterior</p></a>
+    <a href="d004.html"><p>Proximo desafio</p></a>
 
     <script>
         function clicar() {

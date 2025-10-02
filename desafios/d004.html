@@ -8,15 +8,18 @@
         body {
            text-align: center;
            background-color: rgb(164, 146, 245);
-           color: rgb(255, 255, 255);   
+           color: rgb(255, 255, 255);
+           margin-top: 200px;
         }
         input {
             height: 100px;
             width: 200px;
             color: rgb(31, 6, 59);
             font-size: 1.1em;
-            
+            margin-bottom: 50px;
         }
+
+        
     </style>
 </head>
 <body>
@@ -24,6 +27,8 @@
     <h1>Calculando troco</h1>
     <input type="button" value="Comprar produto" onclick="clicar()">
     
+    <a href="d003.html"><p>Desafio anterior</p></a>
+    <a href="d005.html"><p>Proximo desafio</p></a>
 <script>
 function clicar() {
     let produ = window.prompt(`Qual produto você está comprando?`);
@@ -58,7 +63,7 @@ function clicar() {
         } else if (dadon === precon) {
             return `0, pois o dinheiro está exato`; 
         } else {
-            return `0, pois está devendo R$ ${(precon - dadon).replace(',','.')}`; 
+            return `0, pois está devendo R$ ${(precon - dadon).toFixed(2).replace(',','.')}`; 
         }
     }
 

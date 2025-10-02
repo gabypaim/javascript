@@ -3,45 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio mensagens</title>
+    <title>Boas vindas</title>
     <style>
+        body {
+            background-color: rgb(215, 184, 240);
+        }
         div {
-            display: inline-block;
-            background-color: rgb(214, 158, 236);
-            height: 150px;
+            background-color: rgb(178, 158, 226);
+            height: 70px;
             width: 200px;
             border-radius: 10px;
-            
+            margin: auto;
+            margin-top: 14%;
+            margin-bottom: 5%;
         }
         div > p {
             text-align: center;
-            padding-top: 45px;
+            padding-top: 25px;
+            color: white;
+        }
+        a {
+            text-align: center;
+            color: rgb(163, 104, 218);
         }
     </style>
 </head>
 <body>
-    <div id="1" onclick="clicar()"><p>Botão 1</p></div>
-    <div id="2" onclick="clicar()"><p>Botão 2</p></div>
-    <div id="3" onclick="clicar()"><p>Botão 3</p></div>
+
     
-    
+    <div onclick="clicar()"><p>Inicie o desafio</p></div>
+    <a href="d002.html"><p>Proximo desafio</p></a>
+
+
     <script>
-
-        function clicar(){
-            let id = event.currentTarget.id
-            if (id === '1' ) {
-                window.alert('Você cliclou no primeiro botão')
-            } else if (id === '2'){
-                window.alert('Você cliclou no segundo botão')
-
-            }else if (id === '3') {
-                window.alert('Você cliclou no segundo botão')
-            }
+        function clicar() {
+            let nome = window.prompt('Qual seu nome?')
             
+            if (!nome) {
+                window.alert(`Digite um nome`)
+            } else {
+                let idade = prompt(`Olá ${nome}! Quantos anos você tem?`)
+                
+                if (!idade)  {
+                window.alert(`Digite sua idade`)
+                    
+                } else if (isNaN(idade)) {
+                window.alert(`Número invalido`)  
+
+                } else {
+
+                window.alert(`Acabei de conhecer ${nome}, que tem ${idade} anos de idade!`)
+                }
+            }
+                
         }
-
-       
-
+        
     </script>
 </body>
 </html>
