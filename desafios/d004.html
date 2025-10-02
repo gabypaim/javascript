@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula troco</title>
+    <style>
+        body {
+           text-align: center;
+           background-color: rgb(164, 146, 245);
+           color: rgb(255, 255, 255);   
+        }
+        input {
+            height: 100px;
+            width: 200px;
+            color: rgb(31, 6, 59);
+            font-size: 1.1em;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Calculando troco</h1>
+    <input type="button" value="Comprar produto" onclick="clicar()">
+    
+<script>
+function clicar() {
+    let produ = window.prompt(`Qual produto você está comprando?`);
+    if (!produ) {
+        window.alert('Por favor, digite um produto');
+        return; // sai da função se o produto não for digitado, se dar onclick denovo e preencher certo não entra nos ifs
+    }
+
+    let preco = window.prompt(`Quanto custa ${produ}?`);
+    if (!preco) {
+        window.alert('Por favor, digite o valor');
+        return;
+    }
+
+    let dado = window.prompt(`Qual foi o valor que você deu para pagar ${produ}?`);
+    if (!dado) {
+        window.alert('Por favor, digite o valor');
+        return;
+    }
+
+    function troco() {
+        
+        let precon = Number(preco);
+        let dadon = Number(dado);
+
+        if (isNaN(precon) || isNaN(dadon)) {
+            return 'Valores inválidos! \n Recomendo utilizar números com pontos no lugar da virgula';
+        }
+
+        if (dadon > precon) {
+            return dadon - precon;
+        } else if (dadon === precon) {
+            return 0; 
+        } else {
+            return `0, pois está devendo R$ ${precon - dadon}`; 
+        }
+    }
+
+    window.alert(`Você comprou ${produ} que custou R$ ${preco}.\nDeu R$ ${dado} em dinheiro e vai receber R$ ${troco()}`);
+}
+</script>
+
+</body>
+</html>

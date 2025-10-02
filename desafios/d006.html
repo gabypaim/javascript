@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperatura</title>
+    <style>
+        body {
+           text-align: center;
+           background-color: #d5b3f5;
+           color: #ffffff;   
+        }
+        input {
+            height: 100px;
+            width: 200px;
+            color: rgb(31, 6, 59);
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            
+        }
+        #res {
+            display: none;
+            background-color: rgb(255, 255, 255);
+            width: 20%;
+            height: 40%;
+            margin: auto;
+            padding: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <h1>Conversor de temperatura</h1>
+    <input type="button" value="Converter" onclick="clicar()">
+
+    <div id="res"></div>
+
+    <script> 
+
+    function clicar() {
+        document.body.style.background = '#d5b3f5'
+        document.body.style.color = '#ffffff'
+        res.innerHTML = '';
+        res.style.display = "none";
+
+        
+        
+        let temp = window.prompt('Digite a temperatura de hoje em °C (celcius)')
+
+        if (!temp) {
+        window.alert('Digite uma temperatura')
+        return;
+        }
+
+
+        let t = Number(temp.replace(',','.'))
+
+         if (isNaN(t)) {
+        window.alert('Digite uma temperatura válida')
+        return;
+        }
+
+        res.style.display = "block";
+
+        res.innerHTML = `
+        A temperatura de ${t}°C , corresponde a:
+        <p>${t + 273.15}°K (Kelvin)</p>
+        <p>${(t * 9/5 ) + 32}°F (Fahrenheit)</p>`;
+
+        
+        if (t < 20) {
+            document.body.style.background = '#D7F1FA'
+            res.style.color = 'black'
+            document.body.style.color = '#3AA2E7'
+
+            let img = document.createElement('img')
+            img.src = "frio.jpg";
+            img.alt = "Régua";
+            img.width = 300;
+            res.appendChild(img);
+
+        }else {
+            document.body.style.background = '#FAF2D7'
+            res.style.color = 'black'
+            document.body.style.color = '#E79C3A'
+            let img = document.createElement('img')
+            img.src = "calor.jpg";
+            img.alt = "Régua";
+            img.width = 300;
+            res.appendChild(img);
+        }    
+            
+            
+        
+        
+    }
+    
+
+    </script>
+
+</body>
+</html>

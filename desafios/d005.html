@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+    <style>
+        body {
+           text-align: center;
+           background-color: rgb(179, 202, 189);
+           color: rgb(255, 255, 255);   
+        }
+        input {
+            height: 100px;
+            width: 200px;
+            color: rgb(31, 6, 59);
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            
+        }
+        #res {
+            display: none;
+            background-color: rgb(137, 177, 168);
+            width: 20%;
+            height: 40%;
+            margin: auto;
+            padding: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <h1>Conversor de medidas</h1>
+    <input type="button" value="Converter" onclick="clicar()">
+
+    <div id="res"></div>
+
+    <script> 
+
+    function clicar() {
+        res.innerHTML = '';
+        
+        
+        let metros = window.prompt('Digite uma distância em metros')
+
+        if (!metros) {
+        window.alert('Digite uma distância')
+        return;
+        }
+
+        let m = Number(metros.replace(',','.'))
+
+        res.style.display = "block";
+
+        res.innerHTML = `
+        A distância de ${m} metros, corresponde a:
+        <p>${m/1000} quilômetros (km)</p>
+        <p>${m/100} hectômetros (Hm)</p>
+        <p>${m/10} decâmetros (Dam)</p>
+        <p>${m*10} decimetros (dm)</p>
+        <p>${m*100} centímetros (cm)</p>
+        <p>${m*1000} milímitros (mm)</p>`;
+
+
+    }
+    
+
+
+
+    </script>
+
+</body>
+</html>

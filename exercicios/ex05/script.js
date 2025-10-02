@@ -1,12 +1,12 @@
 let num = document.getElementById('txtnum');
 let list = document.getElementById('listid');
 let res = document.getElementById('ares');
-let n = Number(num.value);
+
 
 let numeros = []
 
 function adicionar() {
-    
+    let n = Number(num.value);
 
     if (n.length == 0) {
         window.alert('Porfavor digite um número');

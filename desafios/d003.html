@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e Depois</title>
+    <style>
+         div {
+            background-color: rgb(143, 153, 238);
+            height: 100px;
+            width: 200px;
+            border-radius: 10px;
+        }
+        p {
+            text-align: center;
+            padding-top: 20px;
+            color: rgb(28, 0, 128);
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="clicar()"><p>Antessesor e Sucessor</p></div>
+
+    <script>
+        function clicar() {
+            n = Number(window.prompt(`Digite um número inteiro qualquer`))
+
+            if (!Number.isInteger(n)) {
+                window.alert('Número inválido! Digite um inteiro.')
+            } else {
+                window.alert(`Antes de ${n}, temos o número ${n-1}. \nDepois de ${n}, temos o número ${n+1}.`)
+            }
+
+            
+        }
+        
+    </script>
+</body>
+</html>

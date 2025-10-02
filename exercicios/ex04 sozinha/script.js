@@ -4,7 +4,7 @@ function contar() {
     var passo = document.getElementById('txtpasso')
     var res = document.querySelector('div#res')
 
-    if (Number(passo.value) == 0 || Number(fim.value) == 0 || Number(inicio.value) == 0) { // A condição foi ajustada para verificar se o passo é igual a zero
+    if (Number(passo.value) == 0 || Number(fim.value) == 0 || Number(inicio.value) == 0) { 
         window.alert('Verifique os dados novamente. O passo deve ser maior que zero!')
         res.innerHTML = ('impossivel contar')
     } else {

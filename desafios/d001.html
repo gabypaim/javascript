@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio mensagens</title>
+    <style>
+        div {
+            display: inline-block;
+            background-color: rgb(214, 158, 236);
+            height: 150px;
+            width: 200px;
+            border-radius: 10px;
+            
+        }
+        div > p {
+            text-align: center;
+            padding-top: 45px;
+        }
+    </style>
+</head>
+<body>
+    <div id="1" onclick="clicar()"><p>Botão 1</p></div>
+    <div id="2" onclick="clicar()"><p>Botão 2</p></div>
+    <div id="3" onclick="clicar()"><p>Botão 3</p></div>
+    
+    
+    <script>
+
+        function clicar(){
+            let id = event.currentTarget.id
+            if (id === '1' ) {
+                window.alert('Você cliclou no primeiro botão')
+            } else if (id === '2'){
+                window.alert('Você cliclou no segundo botão')
+
+            }else if (id === '3') {
+                window.alert('Você cliclou no segundo botão')
+            }
+            
+        }
+
+       
+
+    </script>
+</body>
+</html>

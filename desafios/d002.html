@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boas vindas</title>
+    <style>
+        div {
+            background-color: rgb(177, 152, 201);
+            height: 70px;
+            width: 200px;
+            border-radius: 10px;
+        }
+        p {
+            text-align: center;
+            padding-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="clicar()"><p>Inicie o desafio</p></div>
+
+    <script>
+        function clicar() {
+            let nome = window.prompt('Qual seu nome?')
+            
+            if (!nome) {
+                window.alert(`Digite um nome`)
+            } else {
+                let idade = prompt(`Olá ${nome}! Quantos anos você tem?`)
+                
+                if (!idade)  {
+                window.alert(`Digite sua idade`)
+                    
+                } else if (isNaN(idade)) {
+                window.alert(`Número invalido`)  
+
+                } else {
+
+                window.alert(`Acabei de conhecer ${nome}, que tem ${idade} anos de idade!`)
+                }
+            }
+                
+        }
+        
+    </script>
+</body>
+</html>

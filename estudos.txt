@@ -1,0 +1,27 @@
+Number("42")        // 42
+Number("42.5")      // 42.5
+Number.parseInt("42.5") // 42
+Number.isInteger(42.5)  // false
+Number.isInteger(42)    // true
+
+
+
+let item = document.createElement('option'); // option do select
+    item.text = `valor ${n} adicionado`; // escrito na option
+    list.appendChild(item); // add na lista
+
+num.value = ''; // limpa
+num.focus(); // foca o mouse onde digita
+
+
+
+
+let numeros = []
+Ao todo, temos ${numeros.length} números cadastrados.  // elementos do array
+O maior valor informado foi ${Math.max(...numeros)}.  // estudar esses math
+O menor valor informado foi ${Math.min(...numeros)}. 
+Somando todos os valores temos ${numeros.reduce((a,b)=>a+b,0)}. 
+A média dos valores digitados é ${numeros.reduce((a,b)=>a+b,0)/numeros.length}. 
+ 
+else if (numeros.includes(n)) 
+ window.alert('Número já adicionado!'); // verifica se n ja esta incluso em numeros
