@@ -46,19 +46,19 @@ function clicar() {
 
     function troco() {
         
-        let precon = Number(preco);
-        let dadon = Number(dado);
+        let precon = Number(preco.replace(',','.'));
+        let dadon = Number(dado.replace(',','.'));
 
         if (isNaN(precon) || isNaN(dadon)) {
-            return 'Valores inválidos! \n Recomendo utilizar números com pontos no lugar da virgula';
+            return 'Valores inválidos!';
         }
 
         if (dadon > precon) {
-            return dadon - precon;
+            return (dadon - precon).toFixed(2).replace(',','.')
         } else if (dadon === precon) {
-            return 0; 
+            return `0, pois o dinheiro está exato`; 
         } else {
-            return `0, pois está devendo R$ ${precon - dadon}`; 
+            return `0, pois está devendo R$ ${(precon - dadon).replace(',','.')}`; 
         }
     }
 
