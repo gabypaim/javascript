@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ para US$</title>
+    <style>
+        body {
+           text-align: center;
+           background-color: #d6f1cf;
+           color: #0f690f;
+           margin-top: 150px;
+        }
+        input {
+            height: 100px;
+            width: 200px;
+            color: rgb(31, 6, 59);
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            box-shadow: 1px 3px 1px rgba(94, 52, 141, 0.288);
+            margin-bottom: 60px;
+            
+        }
+        
+        #res {
+            display: none;
+            background-color: rgb(255, 255, 255);
+            width: 20%;
+            height: 40%;
+            margin: auto;
+            padding: 10px;
+        }
+
+        a{
+            color: rgb(59, 189, 103);
+            font-size: 1.1em;
+        }
+        a:hover {
+            color: rgb(255, 255, 255);
+        }
+       
+    </style>
+</head>
+<body>
+
+    <h1>Conversor R$ para US$</h1>
+    <input type="button" value="Converter" onclick="clicar()">
+
+    <div id="res"></div>
+
+    <a href="d005.html"><p>Desafio anterior</p></a>
+
+    
+
+    <script> 
+
+        let cot = "";
+        
+
+        // enquanto o valor for vazio, nulo ou não for número, continua pedindo
+        while (!cot || isNaN(cot)) {
+            cot = window.prompt(`Antes de mais nada. Quanto está a cotação do dólar agora?`);
+            cot.toFixed(2).replace(',','.');
+            
+
+            if (!cot || isNaN(cot)) {
+                window.alert(`Por favor, digite a cotação corretamente.`);
+            }
+        }
+        
+        let cotar = Number(cot);
+        window.alert(`Cotação registrada: ${cotar}`);
+
+
+
+        function clicar() {
+
+         let din = window.prompt(`Quantos R$ você tem na carteira?`)
+         let brl = Number(din).replace(',','.');
+        
+         window.prompt(`${brl}`)
+
+         let valor = brl / cotar    
+
+
+
+        }
+        
+
+        
+    </script>
+
+</body>
+</html>
