@@ -16,4 +16,25 @@ div {
     text-align: center;
     border-radius: 10px;
     padding: 10px;
+    padding-bottom: 20px;
+}
+
+#ares {
+    display: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgb(184, 200, 245);
+    color: rgb(33, 56, 119);
+    font-size: 1.2em;
+}
+
+a {
+    text-align: center;
+    color: rgb(93, 86, 194);
+    font-size: 1.3em;
+    
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
 }

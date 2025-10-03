@@ -26,5 +26,16 @@ footer {
     color: white;
     text-align: center;
     font-style: italic;
+    padding-bottom: 20px;
 
+}
+
+a {
+    text-align: center;
+    color: white;
+    
+}
+
+a:hover {
+    color: rgb(255, 255, 255) !important;
 }

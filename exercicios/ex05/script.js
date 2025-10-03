@@ -6,6 +6,8 @@ let res = document.getElementById('ares');
 let numeros = []
 
 function adicionar() {
+    ares.style.display = "none";
+    
     let n = Number(num.value);
 
     if (n.length == 0) {
@@ -30,13 +32,16 @@ function adicionar() {
     num.focus();
 
 }
+    
 
    function finalizar() {
+
     if (numeros.length == 0) {
         window.alert('Adicione um número');
         return; 
     }
-
+    
+    ares.style.display = "block";
     res.innerHTML = `
         <p>Ao todo, temos ${numeros.length} números cadastrados.</p>
         <p>O maior valor informado foi ${Math.max(...numeros)}.</p>

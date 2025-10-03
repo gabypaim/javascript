@@ -23,5 +23,16 @@ footer {
     color: white;
     text-align: center;
     font-style: italic;
+    padding-bottom: 20px;
 
+}
+
+a {
+    text-align: center;
+    color: rgb(119, 67, 185);
+    
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
 }
