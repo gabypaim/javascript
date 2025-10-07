@@ -22,13 +22,14 @@
             
         }
         
-        #res {
+         #res {
             display: none;
-            background-color: rgb(255, 255, 255);
-            width: 20%;
-            height: 40%;
+            background-color: white;
+            width: 30%;
             margin: auto;
-            padding: 10px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         }
 
         a{
@@ -48,7 +49,8 @@
 
     <div id="res"></div>
 
-    <a href="d005.html"><p>Desafio anterior</p></a>
+    <a href="d006.html"><p>Desafio anterior</p></a>
+    <a href="d008.html"><p>Proximo desafio</p></a>
 
     
 
@@ -58,32 +60,45 @@
         
 
         // enquanto o valor for vazio, nulo ou não for número, continua pedindo
-        while (!cot || isNaN(cot)) {
+        while (!cot || isNaN(Number(cot.replace(',', '.')))) {
             cot = window.prompt(`Antes de mais nada. Quanto está a cotação do dólar agora?`);
-            cot.toFixed(2).replace(',','.');
             
-
-            if (!cot || isNaN(cot)) {
+            
+            if (!cot || isNaN(Number(cot.replace(',', '.')))) {
                 window.alert(`Por favor, digite a cotação corretamente.`);
             }
         }
         
-        let cotar = Number(cot);
+        let cotar = Number(cot.replace(',', '.'));
+        cotar = (cotar).toFixed(2).replace('.',',');
+
         window.alert(`Cotação registrada: ${cotar}`);
 
 
-
         function clicar() {
+            
 
          let din = window.prompt(`Quantos R$ você tem na carteira?`)
-         let brl = Number(din).replace(',','.');
+         let brl = Number(din.replace(',', '.'));
+         brl = brl.toFixed(2);
+         cot = cot.replace(',','.');
         
-         window.prompt(`${brl}`)
+         if (!din || isNaN(Number(din.replace(',','.')))) {
+                window.alert('Por favor, digite corretamente');
+                return;
+            }
 
-         let valor = brl / cotar    
+         let valor = (Number(brl) / Number(cot)).toFixed(2);
+          
 
+            // window.alert(`Você tem ${brl} brl e ${cot} é a cotação`)
 
-
+            let res = document.getElementById('res');
+            res.style.display = 'block'
+            
+            res.innerHTML = `<p>💰 Você tem <strong>R$ ${(brl).replace('.',',')}</strong></p>
+                             <p>💵 Isso vale aproximadamente <strong>US$ ${(valor).replace('.',',')}</strong></p>`;;
+                
         }
         
 
