@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Descontos</title>
+    <style>
+        body {
+           text-align: center;
+           background-color: #f5b3b3;
+           color: #ffffff;
+           margin-top: 150px;
+        }
+        input {
+            height: 100px;
+            width: 200px;
+            color: rgb(31, 6, 59);
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            box-shadow: 1px 3px 1px rgba(94, 52, 141, 0.288);
+            
+        }
+        #res {
+            display: none;
+            background-color: rgb(255, 255, 255);
+            width: 40%;
+            height: 40%;
+            margin: auto;
+            margin-bottom: 20px;
+            padding: 20px;
+            color: rgb(240, 149, 149);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        a:hover {
+            color: rgb(255, 255, 255);
+        }
+       
+    </style>
+</head>
+<body>
+
+    <h1>Calcular Desconto</h1>
+    <input type="button" value="Desconto de 10%" onclick="clicar()">
+
+    <div id="res"></div>
+
+    <a href="d007.html"><p>Desafio anterior</p></a>
+    <a href="d009.html"><p>Proximo desafio</p></a>
+    
+
+    <script> 
+
+    function clicar() {
+        res.style.display = 'none'
+
+        let pro = window.prompt(`Qual produto que você está comprando?`)
+       
+        if (!pro) {
+            window.alert('Por favor responda corretamente.');
+        } else {
+            let pre = window.prompt(`Qual é o preço de ${pro}?`);
+            let npre = Number(pre.replace(',','.'));
+
+            if (!pre || isNaN(npre) || npre <= 0 ) {
+                window.alert('Por favor, insira um preço válido (número maior que zero).');
+                return;
+            }
+             
+            let desc = npre / 10
+            let final = npre - desc
+
+
+            //resposta
+            npre = npre.toFixed(2).replace('.',',')
+            desc = desc.toFixed(2).replace('.',',')
+            final = final.toFixed(2).replace('.',',')
+
+            let res = document.getElementById('res')
+            res.style.display = 'block'
+            res.style.color = 'black'
+            res.innerHTML = `&#x1F9FE O preço original era R$ ${npre}. <br> &#x1F4B8 Você acaba de ganhar R$ ${desc} de desconto. <br>&#x1F6D2 No fim, você vai pagar R$ ${final} no produto ${pro}.`;
+        }   
+    }
+
+    </script>
+
+</body>
+</html>

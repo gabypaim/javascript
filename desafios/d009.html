@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste salarial</title>
+    <style>
+        body {
+           text-align: center;
+           background-color: #94bfe7;
+           color: #ffffff;
+           margin-top: 150px;
+        }
+        input {
+            height: 100px;
+            width: 200px;
+            color: rgb(31, 6, 59);
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            box-shadow: 1px 3px 1px rgba(94, 52, 141, 0.288);
+            
+        }
+        #res {
+            display: none;
+            background-color: rgb(255, 255, 255);
+            width: 40%;
+            height: 35%;
+            margin: auto;
+            margin-bottom: 20px;
+            padding: 20px;
+            color: rgb(240, 149, 149);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        a:hover {
+            color: rgb(255, 255, 255);
+        }
+       
+    </style>
+</head>
+<body>
+
+    <h1>Reajuste Salarial</h1>
+    <input type="button" value="Reajustar Salário" onclick="clicar()">
+
+    <div id="res"></div>
+
+    <a href="d008.html"><p>Desafio anterior</p></a>
+    <a href="d010.html"><p>Proximo desafio</p></a>
+    
+
+    <script> 
+
+    function clicar() {
+        res.style.display = 'none'
+
+        let fun = window.prompt(`Qual o nome do funcionário?`)
+       
+        if (!fun) {
+            window.alert('Por favor responda corretamente.');
+            
+        } else {
+            let sal = window.prompt(`Qual é o salário de ${fun}?`);
+            let nsal = Number(sal.replace(',','.'));
+
+            if (!sal || isNaN(nsal) || nsal <= 0 ) {
+                window.alert('Por favor, insira um valor válido (número maior que zero).');
+                return;
+            }
+
+            let por = window.prompt(`O salário de ${fun} vai ser reajustado em  qual porcentagem?`);
+             
+            if (!por || isNaN(por) || por <= 0 ) {
+                window.alert('Por favor, insira um valor válido (número maior que zero).');
+                return;
+            }
+
+            let aum = nsal * por / 100
+            let final = nsal + aum
+
+
+            //resposta
+            nsal = nsal.toFixed(2).replace('.',',')
+            aum = aum.toFixed(2).replace('.',',')
+            final = final.toFixed(2).replace('.',',')
+
+            let res = document.getElementById('res')
+            res.style.display = 'block'
+            res.style.color = 'black'
+            res.innerHTML = `&#x1F9FE O salário atual era R$ ${nsal}. <br> &#x1F4B8 Com o aumento de ${por}%, o salário vai aumentar R$ ${aum} no final do mês. <br>&#x1F4B0 No fim, ${fun} vai receber R$ ${final} de salário.`;
+        }   
+    }
+    
+    </script>
+
+</body>
+</html>
