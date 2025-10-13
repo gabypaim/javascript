@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: auto;
+            text-align: center;
+            background-color: rgb(138, 206, 138);
+        }
+        h1 {
+            color: rgb(46, 54, 58);
+        }
+        input {
+            height: 70px;
+            width: 200px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(113, 134, 116);
+            border: rgb(46, 54, 58) solid 1.8px;
+        }
+
+        #res {
+            color: black;
+            text-align: center;
+            margin: auto;
+            padding-top: 10px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+        a {
+            color: rgb(46, 54, 58); ;
+        }
+        a:hover {
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    
+    <input type="button" value="Calcular" onclick="calcular()">
+
+    
+
+    <div id="res"><p>considerando uma equação no formato ax<sup>2</sup> + bx + c = 0, aperte o botão acima para calcular o valor de &Delta;</p> </div>
+
+    <a href="d009.html"><p>Desafio anterior</p></a>
+    <a href="d011.html"><p>Proximo desafio</p></a>
+
+    <script>
+        function calcular() {
+            let a = window.prompt("Qual é o valor de a?");
+            if (a === null || a.trim() === "" || isNaN(a)) {
+                return window.alert("Por favor, digite corretamente");
+            }
+            a = Number(a);
+
+            let b = window.prompt("Qual é o valor de b?");
+            if (b === null || b.trim() === "" || isNaN(b)) {
+                return window.alert("Por favor, digite corretamente");
+            }
+            b = Number(b);
+
+            let c = window.prompt("Qual é o valor de c?");
+            if (c === null || c.trim() === "" || isNaN(c)) {
+                return window.alert("Por favor, digite corretamente");
+            }
+            c = Number(c);
+
+            let delta = b ** 2 - 4 * a * c ; 
+
+            let res = document.getElementById('res')
+            res.style.background = 'white';
+            res.style.width = '30%'
+            res.style.height = '550px';
+
+            res.innerHTML = 
+            `<h1> Resolvendo Bhaskara </h1> 
+            <p> A equação atual é ${a}x<sup>2</sup> + ${b} + ${c}</p>
+            <p> O cálculo a ser realizado é &Delta; = ${b}x<sup>2</sup> - 4 . ${a} . ${c}
+            <p>O valor de &Delta; é ${delta}</p>`
+
+            let img = document.createElement('img');
+            img.src = "shikamaru.jpg";
+            img.alt = "shikamaru"
+            img.width = 300;
+            res.appendChild(img);
+            
+        }
+    </script>
+</body>
+</html>
