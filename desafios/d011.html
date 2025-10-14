@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Bissexto</title>
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+            background-color: rgb(172, 136, 231);
+            font-family: Arial, sans-serif;
+        }
+
+        input {
+            height: 80px;
+            width: 200px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        h1 {
+            color: aliceblue;
+        }
+        #res {
+            color: black;
+            text-align: center;
+            margin: 40px auto; /* centraliza horizontal */
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            width: 30%;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column; /* empilha texto e imagem */
+            justify-content: center; /* centraliza verticalmente */
+            align-items: center; /* centraliza horizontalmente */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        #res img {
+            margin-top: 20px;
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <input type="button" value="Verificar" onclick="clicar()">
+
+    <div id="res">
+        <p>Informe um ano para saber se ele é bissexto</p>
+    </div>
+    
+    <script>
+        function clicar() {
+            let numb = window.prompt('Qual ano você quer verificar?');
+
+            if (numb.trim() === "" || isNaN(numb)) {
+                return window.alert('Por favor digite corretamente');
+            }
+
+            numb = Number(numb);
+            if (!Number.isInteger(numb)) {
+                return window.alert('Número inválido! Digite um inteiro.');
+            }
+
+            let res = document.getElementById('res');
+
+            
+            res.innerHTML = '';
+
+            
+            let resultado = document.createElement('p');
+            resultado.textContent = ((numb % 4 === 0 && numb % 100 !== 0) || (numb % 400 === 0))
+                ? `${numb} é bissexto`
+                : `${numb} não é bissexto`;
+
+            res.appendChild(resultado);
+
+            
+            let img = document.createElement('img');
+            img.src = 'kuromi.png'; 
+            img.id = 'imagem';
+
+            res.appendChild(img);
+        }
+    </script>
+</body>
+</html>
