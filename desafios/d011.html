@@ -18,7 +18,7 @@
             margin-top: 20px;
             cursor: pointer;
         }
-        h1 {
+        h1, p {
             color: aliceblue;
         }
         #res {
@@ -35,6 +35,7 @@
             justify-content: center; /* centraliza verticalmente */
             align-items: center; /* centraliza horizontalmente */
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: none;
         }
 
         #res img {
@@ -43,14 +44,17 @@
             height: auto;
             border-radius: 10px;
         }
+        #res > p {
+            color: black;
+        }
     </style>
 </head>
 <body>
     <h1>Ano Bissexto</h1>
     <input type="button" value="Verificar" onclick="clicar()">
-
+    <p>Informe um ano para saber se ele é bissexto</p>
     <div id="res">
-        <p>Informe um ano para saber se ele é bissexto</p>
+        
     </div>
     
     <script>
@@ -70,15 +74,16 @@
 
             
             res.innerHTML = '';
+            res.style.display = 'block';
 
-            
             let resultado = document.createElement('p');
             resultado.textContent = ((numb % 4 === 0 && numb % 100 !== 0) || (numb % 400 === 0))
                 ? `${numb} é bissexto`
                 : `${numb} não é bissexto`;
 
             res.appendChild(resultado);
-
+            
+            
             
             let img = document.createElement('img');
             img.src = 'kuromi.png'; 
