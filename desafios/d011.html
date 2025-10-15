@@ -10,42 +10,61 @@
             text-align: center;
             background-color: rgb(172, 136, 231);
             font-family: Arial, sans-serif;
+            font-size: 0.9vw;
         }
 
         input {
-            height: 80px;
-            width: 200px;
-            margin-top: 20px;
+            height: 4vw;
+            width: 10vw;
+            margin-top: 10px;
             cursor: pointer;
+            font-size: 0.9vw;
         }
-        h1, p {
+        h1{
+            margin-top: 2vh;
             color: aliceblue;
+        }
+        p {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 5px;
         }
         #res {
             color: black;
             text-align: center;
-            margin: 40px auto; /* centraliza horizontal */
+            margin: auto; 
             padding: 20px;
             border-radius: 10px;
             background: white;
-            width: 30%;
-            min-height: 200px;
+            height: 15vw;
+            width: 20vw;
             display: flex;
             flex-direction: column; /* empilha texto e imagem */
             justify-content: center; /* centraliza verticalmente */
             align-items: center; /* centraliza horizontalmente */
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             display: none;
+            margin-bottom: 20px;
         }
 
         #res img {
-            margin-top: 20px;
-            max-width: 80%;
-            height: auto;
-            border-radius: 10px;
+            width: 12vw;
+            height: 12vw;
+        
         }
         #res > p {
             color: black;
+            font-size: 0.9vw;
+            margin-bottom: 5px;
+        }
+        a {
+            color: white;
+            line-height: 30px;
+            
+        }
+        a:hover {
+            color: rgb(177, 59, 255);
+            
         }
     </style>
 </head>
@@ -56,6 +75,9 @@
     <div id="res">
         
     </div>
+
+    <a href="d010.html">Desafio anterior</a> <br>
+    <a href="d012.html">Proximo desafio</a>
     
     <script>
         function clicar() {
@@ -71,8 +93,6 @@
             }
 
             let res = document.getElementById('res');
-
-            
             res.innerHTML = '';
             res.style.display = 'block';
 

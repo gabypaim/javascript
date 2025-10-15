@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço</title>
+    <style>
+        body {
+            margin: auto;
+            text-align: center;
+            background-color: rgb(150, 150, 150);
+            font-size: 0.9vw;
+        }
+        body > h1 {
+            margin-top: 10px;
+            color: white;
+            font-size: 2vw;
+        }
+        input {
+            height: 4vw;
+            width: 10vw;
+            margin-bottom: 20px;
+            font-size: 0.9vw;
+        }
+        #res {
+            display: none;
+            background-color: white;
+            height: 30vw;
+            width: 30vw;
+            margin: auto;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.425);
+        }
+        #res > h1 {
+            padding-top: 2vw;
+            font-size: 1.5vw;
+        }
+        #res > p {
+            font-size: 0.9vw;
+        }
+        #puffle {
+            width: 12vw;
+            height: 12vw;
+            margin-top: 10px;
+        }
+
+        a {
+            color: white;
+        }
+
+        a:hover {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+
+    <input type="button" value="Verificar" onclick="clicar()">
+
+    <div id="res"></div>
+
+    <a href="d011.html"><p>Desafio anterior</p></a>
+    <a href="d013.html"><p>Proximo desafio</p></a>
+
+    <script>
+        function clicar() {
+            let res = document.getElementById('res')
+            res.innerHTML = '';
+            
+
+            //pergunta 1
+            let an = window.prompt('Qual era o preço anterior do produto?');
+            an = an.replace(',','.');
+            if (an.trim() === '' || isNaN(an)) {
+                return window.alert('digite corretamente!');
+            }
+            an = Number(an);
+
+            //pergunta 2
+            let at = window.prompt('Qual era o preço atual do produto?');
+            at = at.replace(',','.');
+            if (at.trim() === '' || isNaN(at)) {
+                return window.alert('digite corretamente!');
+            }
+            at = Number(at);
+            
+            let img = document.createElement('img');
+            img.id = 'puffle';
+
+            let mais = '';
+            let suca = '';
+            let dif = '';
+            let ciba ='';
+
+            if (an > at) {
+                mais = 'barato';
+                suca = 'caiu';
+                dif = an - at;
+                ciba = 'baixo'
+                img.src = 'feliz.jpg';
+            } else {
+                mais = 'caro';
+                suca = 'subiu';
+                dif = at - an;
+                ciba = 'cima';
+                img.src = 'irritado.jpg';
+            }
+
+            por = (at - an) / an * 100 ;
+            por = Math.abs(por);
+            por = por.toFixed(2).replace('.',',');
+            
+            dif = dif.toFixed(2).replace('.',',');
+            an = an.toFixed(2).replace('.',',');
+            at = at.toFixed(2).replace('.',',');
+
+            
+
+            res.style.display = 'block';
+            res.innerHTML = `<h1>Analisando os valores informados</h1>
+            <p>O produto custava R$ ${an} e agora custa R$ ${at}.</p>
+            <p>Hoje o produto está mais ${mais}</p>
+            <p>O preço ${suca} R$ ${dif} em relação ao preço anterior.</p>
+            <p>Uma variação de ${por}% pra ${ciba}</p>`;
+
+            res.appendChild(img);
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
